@@ -1,4 +1,4 @@
-# Ionic-5 Project Structure
+# Ionic-5 With Capacitor Project Structure
 
 ## Prerequisites
 
@@ -12,6 +12,7 @@
 https://github.com/tbs-raviashara/ionic5-project-structure.git
 ```
 
+- Pages
 - Components
 - Services
 - Pipes
