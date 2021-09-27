@@ -12,24 +12,12 @@
 https://github.com/tbs-raviashara/ionic5-project-structure.git
 ```
 
-- Component
+- Components
 - Services
 - Pipes
 - Constants
 - Routing
 - Guard (canActivate)
-
-## Start A Local Dev Server
-
-```
-ionic serve --open
-```
-
-## Run Application
-
-```
-ionic cap run android
-```
 
 ```
 The Ionic CLI can generate new app features with the ionic generate command. By running ionic generate in the commandline, a selection prompt is displayed which lists the available features that can be generated.
@@ -46,6 +34,20 @@ pipe
 interface
 enum
 ```
+
+## Start A Local Dev Server
+
+```
+ionic serve --open
+```
+
+## Run Application
+
+```
+ionic cap run android
+```
+
+
 
 ## How to use
 
