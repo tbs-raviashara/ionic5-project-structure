@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor() { }
 
+  toggleDarkTheme(shouldAdd: any) {
+    document.body.classList.toggle('dark', shouldAdd.detail.checked);
+    document.body.setAttribute('data-theme', shouldAdd.detail.checked ? 'dark' : 'light');
+    localStorage.theme = shouldAdd.detail.checked ? 'dark' : 'light';
+  }
 }

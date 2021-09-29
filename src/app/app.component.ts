@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    if (localStorage.theme) {
+      if (localStorage.theme == 'dark')
+        document.body.classList.add('dark');
+      document.body.setAttribute('data-theme', localStorage.theme);
+    } else {
+      document.body.setAttribute('data-theme', 'light');
+    }
+  }
 }
