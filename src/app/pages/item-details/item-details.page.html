@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button color="success"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Logitech G502 Hero High Performance Gaming Mouse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="12">
+      <ion-img src="assets/61mpMH5TzkL._SX522_.jpg"></ion-img>
+      <h5 class="ion-no-margin">
+        Logitech G502 Hero High Performance Gaming Mouse
+      </h5>
+    </ion-col>
+    <ion-col size="6">
+      <b>$8.00</b> &nbsp;
+      <strike>$10.00</strike> &nbsp;
+      <ion-text color="danger">
+        <span> 1% Off</span>
+      </ion-text>
+    </ion-col>
+    <ion-col size="6" class="ion-text-end">
+      <ion-icon name="star" color="success"></ion-icon>
+      <ion-icon name="star" color="success"></ion-icon>
+      <ion-icon name="star" color="success"></ion-icon>
+      <ion-icon name="star" color="success"></ion-icon>
+      <ion-icon name="star-outline"></ion-icon>
+      81,000
+    </ion-col>
+
+    <ion-col size="6" class="quantity">
+      <ion-text color="success">
+        Quantity 500 Available
+      </ion-text>
+    </ion-col>
+    <ion-col size="6" class="ion-text-end">
+      <ion-button size="small" fill="clear" class="ion-margin-right verticalAlign" color="success" (click)="updateQuantity('-')">
+        <ion-icon slot="icon-only" name="remove"></ion-icon>
+      </ion-button>
+      <span> {{quantity}} </span>
+      <ion-button size="small" fill="clear" class="ion-margin-left verticalAlign" color="success" (click)="updateQuantity('+')">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6" class="ion-padding-horizontal">
+      <ion-button expand="block" fill="outline" color="success">
+        Add To WishList
+      </ion-button>
+    </ion-col>
+    <ion-col size="6" class="ion-padding-horizontal">
+      <ion-button expand="block" color="success" fill="outline">
+        Add To Cart
+      </ion-button>
+    </ion-col>
+    <ion-col size="12" class="ion-padding-horizontal">
+      <ion-button expand="block" color="success">
+        Buy It Now
+      </ion-button>
+    </ion-col>
+    <ion-col size="12">
+      <ion-card class="ion-no-margin">
+        <h5 class="ion-padding-start">About this item</h5>
+        <ul>
+          <li>High-performance Hero 25K sensor through a software update from G HUB, this upgrade is free to all
+            players: Our most advanced, with 1:1 tracking, 400+ ips, and 100 - 25,600 max dpi sensitivity plus zero
+            smoothing, filtering, or acceleration</li>
+          <li>11 Customizable Buttons and Onboard Memory: Assign custom commands to the buttons and save up to five
+            ready-to-play profiles directly to the mouse ; Compatibility with Windows 7 or later and macOS 10.11 or
+            later, Chrome OS</li>
+          <li>Adjustable Weight System: Arrange up to five removable 3.6g weights inside the mouse for personalized
+            weight and balance tuning</li>
+          <li>Programmable RGB Lighting and LIGHTSYNC Technology: Customize lighting from nearly 16.8 million colors to
+            match your team's colors, sport your own or sync colors with other Logitech G gear</li>
+          <li>Mechanical Switch Button Tensioning: Metal spring tensioning system and pivot hinges are built into left
+            and right gaming mouse buttons for a crisp, clean click feel with rapid click feedback</li>
+          <li>Manufacturer Detail: Logitech Asia Pacific Ltd, Units 1003, Tower 1, Cheung Sha Wan Plaza, 833 Cheung Sha
+            Wan Road, Kowloon, Hong Kong.</li>
+        </ul>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
