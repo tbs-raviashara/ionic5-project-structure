@@ -1,3 +1,5 @@
+import { apiMethod } from 'src/app/constants/constants';
+import { CallApiService } from './../../services/callApi/call-api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(public callAPI: CallApiService) { }
 
   ngOnInit() {
   }

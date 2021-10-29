@@ -1,3 +1,4 @@
+import { CallApiService } from './../services/callApi/call-api.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() { }
+  constructor(public callAPI: CallApiService) {
+    // this.callAPI.callSecondAPI();
+  }
 
   toggleDarkTheme(shouldAdd: any) {
     document.body.classList.toggle('dark', shouldAdd.detail.checked);

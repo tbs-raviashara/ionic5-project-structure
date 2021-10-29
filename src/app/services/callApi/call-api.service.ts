@@ -17,16 +17,7 @@ export class CallApiService {
       this.httpClient.get(url).subscribe((response: any) => {
         successCallBack(response);
       }, (error: any) => {
-        if (error.statusText === "Unauthorized") {
-          this.refreshToken((callBack: any) => {
-            if (callBack) {
-              this.apiCall(method, url, params, successCallBack, errorCallBack);
-            }
-          });
-        } else {
-          errorCallBack(error);
-          this.handleError(error);
-        }
+        errorCallBack(error);
       });
     }
 
@@ -34,16 +25,7 @@ export class CallApiService {
       this.httpClient.post(url, params).subscribe((response: any) => {
         successCallBack(response);
       }, (error: any) => {
-        if (error.statusText === "Unauthorized") {
-          this.refreshToken((callBack: any) => {
-            if (callBack) {
-              this.apiCall(method, url, params, successCallBack, errorCallBack);
-            }
-          });
-        } else {
-          errorCallBack(error);
-          this.handleError(error);
-        }
+        errorCallBack(error);
       });
     }
 
@@ -51,16 +33,7 @@ export class CallApiService {
       this.httpClient.put(url, params).subscribe((response: any) => {
         successCallBack(response);
       }, (error: any) => {
-        if (error.statusText === "Unauthorized") {
-          this.refreshToken((callBack: any) => {
-            if (callBack) {
-              this.apiCall(method, url, params, successCallBack, errorCallBack);
-            }
-          });
-        } else {
-          errorCallBack(error);
-          this.handleError(error);
-        }
+        errorCallBack(error);
       });
     }
 
@@ -68,42 +41,19 @@ export class CallApiService {
       this.httpClient.delete(url).subscribe((response: any) => {
         successCallBack(response);
       }, (error: any) => {
-        if (error.statusText === "Unauthorized") {
-          this.refreshToken((callBack: any) => {
-            if (callBack) {
-              this.apiCall(method, url, params, successCallBack, errorCallBack);
-            }
-          });
-        } else {
-          errorCallBack(error);
-          this.handleError(error);
-        }
+        errorCallBack(error);
       });
     }
   }
 
-  handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error.message);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-    }
-    // return an observable with a user-facing error message
-    return throwError(
-      'Something bad happened; please try again later.');
-  }
+  refreshToken() {
+    let loginParams = {
+      grant_type: '',
+      username: '',
+      password: '',
+    };
 
-  refreshToken(callBack: any) {
-    this.apiCall('', '', '', (isSuccess: any) => {
-      callBack(true);
-    }, (isError: any) => {
-      callBack(false);
-    });
+    return this.httpClient.post('url', this.getJsonString(loginParams));
   }
 
   showAlert(header: string, message: string, buttonName: string) {
@@ -160,5 +110,36 @@ export class CallApiService {
 
   hideLoader() {
     this.loadingController.dismiss();
+  }
+
+  getJsonString(params: any) {
+    let formBody: any = [];
+    for (const property in params) {
+      const encodedKey = encodeURIComponent(property);
+      const encodedValue = encodeURIComponent(params[property]);
+      formBody.push(encodedKey + '=' + encodedValue);
+    }
+    return (formBody = formBody.join('&'));
+  }
+
+  clickLogin() {
+    let loginParams = {
+      grant_type: '',
+      username: '',
+      password: '',
+    };
+    this.apiCall(apiMethod.post, 'url', this.getJsonString(loginParams), (success: any) => {
+      localStorage.token = success.access_token;
+    }, (error: any) => {
+      console.log(error);
+    });
+  }
+
+  callSecondAPI() {
+    this.apiCall(apiMethod.get, 'url', '', (success: any) => {
+      console.log(success, 'success');
+    }, (error: any) => {
+      console.log(error);
+    });
   }
 }
