@@ -11,10 +11,10 @@
 ```
 https://github.com/tbs-raviashara/ionic5-project-structure.git
 ```
-
+- Interceptor
 - Pages
 - Components
-- Services
+- Services (API Call)
 - Pipes
 - Constants
 - Routing
