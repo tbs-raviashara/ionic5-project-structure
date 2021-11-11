@@ -12,6 +12,14 @@ export class CallApiService {
 
   constructor(public loadingController: LoadingController, public toastController: ToastController, public alertController: AlertController, public navController: NavController, public httpClient: HttpClient, public router: Router, public ngZone: NgZone, public platForm: Platform) { }
 
+  /**
+   * @param {string} method get/post/delete/put
+   * @param {string} url End-Point Name
+   * @param {*} params Post method parameters
+   * @param {*} successCallBack CallBack
+   * @param {*} errorCallBack CallBack
+   * @memberof CallApiService
+   */
   apiCall(method: string, url: string, params: any, successCallBack: any, errorCallBack: any) {
     if (method == apiMethod.get) {
       this.httpClient.get(url).subscribe((response: any) => {
@@ -56,29 +64,42 @@ export class CallApiService {
     return this.httpClient.post('url', this.getJsonString(loginParams));
   }
 
-  showAlert(header: string, message: string, buttonName: string) {
+  /**
+   * @param {string} header Alert Header // Default 'Demo'
+   * @param {string} message Alert Message
+   * @param {string} [buttonName] Button Name // Default 'Okay'
+   * @memberof CallApiService
+   */
+  showAlert(header: string, message: string, buttonName?: string) {
     this.alertController.create({
       header: header || 'Demo',
       message: message,
-      buttons: [buttonName]
+      buttons: buttonName ? [buttonName] : ['Okay']
     }).then((alert: any) => {
       alert.present();
     });
   }
 
-  showConfirm(header: string, message: string, buttonName: any, callBack: any) {
+  /**
+   * @param {string} header Confirm Header // Default 'Demo'
+   * @param {string} message Confirm Message
+   * @param {*} [buttonName] Button Name // Default 'Okay' and 'Cancel'
+   * @param {*} [callBack] CallBack
+   * @memberof CallApiService
+   */
+  showConfirm(header: string, message: string, buttonName?: any, callBack?: any) {
     this.alertController.create({
       header: header || 'Demo',
       message: message,
       buttons: [
         {
-          text: buttonName[0],
+          text: buttonName ? buttonName[0] : 'Cancel',
           role: 'cancel',
           handler: () => {
             callBack(false);
           }
         }, {
-          text: buttonName[0],
+          text: buttonName ? buttonName[1] : 'Okay',
           handler: () => {
             callBack(true);
           }
@@ -89,11 +110,17 @@ export class CallApiService {
     });
   }
 
-  showToast(message: string, position: any, duration: number) {
+  /**
+   * @param {string} message Toast Message
+   * @param {*} [position] "top" | "bottom" | "middle" // default top
+   * @param {number} [duration] default 2500
+   * @memberof CallApiService
+   */
+  showToast(message: string, position?: any, duration?: number) {
     this.toastController.create({
       message: message,
-      position: position,
-      duration: duration
+      position: position || 'top',
+      duration: duration || 2500
     }).then((toast: any) => {
       toast.present();
     });

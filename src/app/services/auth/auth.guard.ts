@@ -9,7 +9,7 @@ export class AuthGuard implements CanActivate {
   constructor(public router: Router) { }
 
   canActivate(): boolean {
-    if (localStorage.isLogin !== undefined && localStorage.isLogin.toString() === 'true') {
+    if (localStorage.isLogin) {
       return true;
     } else {
       this.router.navigateByUrl('/login');
