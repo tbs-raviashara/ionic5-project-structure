@@ -4,13 +4,14 @@
 
 - [Ionic](https://ionicframework.com/docs/installation/cli/#install-the-ionic-cli)
 
-- [Capacitor](hhttps://capacitorjs.com/docs/cli)
+- [Capacitor](https://capacitorjs.com/docs/cli)
 
 ## Clone Project
 
 ```
 https://github.com/tbs-raviashara/ionic5-project-structure.git
 ```
+
 - Interceptor
 - Pages
 - Components
@@ -19,6 +20,7 @@ https://github.com/tbs-raviashara/ionic5-project-structure.git
 - Constants
 - Routing
 - Guard (canActivate)
+- Virtual Scroll (Ionic)
 
 ```
 The Ionic CLI can generate new app features with the ionic generate command. By running ionic generate in the commandline, a selection prompt is displayed which lists the available features that can be generated.
@@ -47,8 +49,6 @@ ionic serve --open
 ```
 ionic cap run android
 ```
-
-
 
 ## How to use
 
