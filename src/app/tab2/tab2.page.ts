@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
+  data: any = [];
+  constructor() {
+    this.data = Array.from({ length: 2000 }, (_, k) => {
+      return { name: `name -  ${k + 1}` }
+    });
+  }
 
 }

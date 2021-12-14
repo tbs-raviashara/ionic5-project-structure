@@ -1,11 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>Virtual Scroll List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-virtual-scroll [items]="data">
+    <ion-item *virtualItem="let item">
+      {{ item?.name }}
+    </ion-item>
+  </ion-virtual-scroll>
 </ion-content>

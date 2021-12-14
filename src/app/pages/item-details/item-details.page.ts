@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemDetailsPage implements OnInit {
   quantity: number = 1;
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
   updateQuantity(val: any) {
