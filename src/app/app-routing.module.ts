@@ -5,7 +5,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '',
+    redirectTo: 'profile',
     pathMatch: 'full',
   },
   {
@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'item-details',
     loadChildren: () => import('./pages/item-details/item-details.module').then(m => m.ItemDetailsPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule)
   }
 ];
 @NgModule({

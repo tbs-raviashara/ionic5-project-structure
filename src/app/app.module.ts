@@ -1,3 +1,4 @@
+import { ProfilePhotoOptionPageModule } from './pages/profile-photo-option/profile-photo-option.module';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule, ProfilePhotoOptionPageModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,

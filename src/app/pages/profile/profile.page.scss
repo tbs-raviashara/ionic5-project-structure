@@ -1,0 +1,33 @@
+.container {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    .outer {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100px !important; /* any size */
+        max-height: 100px !important; /* any size */
+        margin: auto;
+        border-radius: 100%;
+        position: relative;
+        background-size: 100px 100px;
+        .inner {
+            background-color: #075e54;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .camera-icon {
+                height: 20px;
+                width: 20px;
+                color: white;
+            }
+        }
+    }
+}
